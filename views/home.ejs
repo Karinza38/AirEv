@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/util.css">
+	<link rel="stylesheet" type="text/css" href="assets/main.css">
+	<style>
+.modal {
+  display: none;
+  position: fixed; 
+  z-index: 1;
+  padding: 200px; 
+  padding-left: 350px;
+  padding-right: 350px;
+''
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4); 
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+ .modal-headerr {
+   padding: 2px 16px; 
+  background-color: #ac3535;
+  text-align: center;
+  color: white;
+} 
+
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+.modal-body {padding: 2px 16px;}
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+	</style>
+<!--===============================================================================================-->
+</head>
+<form id="myform" method="post" action=<%= data.addr %>></form>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="images/img-01.png" alt="IMG">
+				</div>
+
+				<form class="login100-form validate-form" method="post" action=<%= data.addr2 %>>
+					<span class="login100-form-title">
+						<%= data.page %>
+					</span>
+					
+
+                    <% if (data.page==='Sign Up') { %>
+                        
+                      
+                    <div class="wrap-input100 validate-input" id="name123" data-validate = "Name is required">
+						<input class="input100" type="text" name="name" placeholder="Name">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user" aria-hidden="true"></i>
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input" id="model123" data-validate = "Name is required">
+						<input class="input100" type="text" name="model" placeholder="Model">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-car" aria-hidden="true"></i>
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input" id="address123" data-validate = "Name is required">
+						<input class="input100" type="text" name="address" placeholder="Address">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-address-book" aria-hidden="true"></i>
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input" id="email123" data-validate = "Name is required">
+						<input class="input100" type="text" name="email" placeholder="Email">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div><% } %>
+
+					<div class="wrap-input100 validate-input" >
+						<input class="input100" type="text" name="username" placeholder="Username">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-address-card" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type="password" name="pass" placeholder="Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+
+                    
+					
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" id="mybtn">
+							<%= data.page %>
+						</button>
+					</div>
+
+					
+
+					<div class="text-center p-t-136">
+						<a onclick="document.getElementById('myform').submit();" onmouseover="this.style.cursor='pointer'">
+							
+                            <%= data.msg %>
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+
+							
+							
+
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div id="myModal" class="modal">
+
+			<!-- Modal content -->
+			<div class="modal-content">
+			  <div class="modal-headerr">
+				<span class="close">&times;</span>
+				<h2>Invalid Credentials</h2>
+			  </div>
+			  <div class="modal-body"><br>
+				<h6>This username or phone number that you have entered dosen't match any account. Sign up for an account</h6>
+				<p></p>
+			  </div>
+			  
+			</div>
+		  
+		</div>
+	</div>
+	
+	
+    
+	
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"> </script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+		var btn = document.getElementById("mybtn");
+		function ar() {
+			modal.style.display = "<%=view.hide%>";
+			// event.preventDefault();
+			};
+			ar();
+			window.onclick = function(event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+		}
+		
+
+        // document.getElementById("name123").style.display = "<=%data.type%>";
+        // console.log(<%data.type%>);
+        
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>

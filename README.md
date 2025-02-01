@@ -1,4 +1,4 @@
-# Introduction
+ # Introduction
 - Electric vehicles are gaining popularity and market share. In Q2 2022, EV sales accounted for 5.6% of the total auto market (up from 2.7% in Q2 of 2021).
 - Clean energy and improved performance are driving people to make the switch to electric.
 - Government incentives continue to buttress the future of all things electric.
